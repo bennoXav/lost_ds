@@ -1,0 +1,53 @@
+pc-
+	insert code:
+	123456789
+	40028922
+	26112000
+	?
+
+quando clicar em alguma opção:
+	end screen () escotilha explodida
+
+qundo clicar na seta pra voltar:
+	pc_dialog:
+		locke: "jack - largue a arma"
+		
+
+	V
+jack gun front:
+		jack: "locke? oque voce está fazendo"
+		
+	V
+jack gun back:
+		voz desconhecida: "insira o código no computador, jack, ou seu amigo aqui terá sobrevivido da queda a toa"
+	V	
+jack gun front:
+		jack: "código? que código?"
+		
+		
+	V
+jack gun back:
+		voz desconhecida: "ele está anotado em algum lugar na outra sala, vá encontrar."
+		
+	V
+sala_03	
+
+	começa a exibir a bancada na sala magnética
+	
+	ao clicar na mesa vai para tela: bancada_bilhete
+	
+	na tela bancada_bilhete existe um item circulado em dourado.
+	
+	ao clicar nele vai para tela: codigo_bilhete
+	
+	volta para tela sala magnética
+	
+	volta para sala do computador
+	
+	clica no computador
+	
+	nova opção de código
+	
+	seleciona a opção correta: 
+		mostra que o tempo voltou/alguém fala que está tudo bem aqui, fim da demo.
+		

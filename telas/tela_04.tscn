@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Backgrounds/image.png" type="Texture" id=1]
+[ext_resource path="res://telas/tela_04.gd" type="Script" id=2]
+[ext_resource path="res://Backgrounds/option_box.png" type="Texture" id=3]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.75, 40 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.0
+height = 58.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 100.531, 15.25 )
+
+[node name="tela_04" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 509, 304 )
+scale = Vector2( 2.044, 2.10498 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 73, 530 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 75, 540 )
+rotation = -1.5708
+shape = SubResource( 2 )
+
+[node name="options_box" type="Sprite" parent="."]
+position = Vector2( 516, 469 )
+scale = Vector2( 0.603333, 0.750976 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 220.0
+margin_top = 371.0
+margin_right = 301.0
+margin_bottom = 422.0
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_colors/selection_color = Color( 1, 0.0392157, 0.0392157, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+text = "???"
+
+[node name="dialog_options" type="Area2D" parent="."]
+
+[node name="option_1" type="CollisionShape2D" parent="dialog_options"]
+position = Vector2( 305, 451 )
+shape = SubResource( 3 )
+
+[node name="option_2" type="CollisionShape2D" parent="dialog_options"]
+position = Vector2( 307.938, 489.5 )
+shape = SubResource( 3 )
+
+[node name="option_3" type="CollisionShape2D" parent="dialog_options"]
+position = Vector2( 313, 526 )
+shape = SubResource( 3 )
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="dialog_options" to="." method="_on_dialog_options_mouse_entered"]
+[connection signal="mouse_exited" from="dialog_options" to="." method="_on_dialog_options_mouse_exited"]
