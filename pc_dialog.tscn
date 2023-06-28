@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://pc_dialog.gd" type="Script" id=1]
 [ext_resource path="res://Backgrounds/pc_clean.jpg" type="Texture" id=2]
 [ext_resource path="res://Backgrounds/dialog_box.png" type="Texture" id=3]
 [ext_resource path="res://ARLRDBD.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://fonts/ARLRDBD.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://voices/john/Jack drop the gun!!.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -54,6 +55,10 @@ position = Vector2( 8, 456 )
 [node name="pc_dialog_col" type="CollisionShape2D" parent="pc_dialog_area2d"]
 position = Vector2( 523, 43 )
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="mouse_entered" from="pc_dialog_area2d" to="." method="_on_pc_dialog_area2d_mouse_entered"]
 [connection signal="mouse_exited" from="pc_dialog_area2d" to="." method="_on_pc_dialog_area2d_mouse_exited"]

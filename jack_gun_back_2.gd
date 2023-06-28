@@ -13,9 +13,9 @@ func _ready() -> void:
 
 
 func _process(delta:float) -> void:
-		print(get_tree().current_scene)
 		if inside_back_2 and Input.is_action_pressed("click")  :
-			get_tree().change_scene("res://telas/tela_03.tscn")
+			$"/root/Music".play_music()
+			get_tree().change_scene("res://jack_whats_music.tscn")
 
 
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://jack_gun_front_2.gd" type="Script" id=1]
 [ext_resource path="res://Backgrounds/jack_gun_front.jpg" type="Texture" id=2]
 [ext_resource path="res://Backgrounds/dialog_box.png" type="Texture" id=3]
 [ext_resource path="res://fonts/ARLRDBD.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://Area2D.gd" type="Script" id=5]
+[ext_resource path="res://voices/jack/Code What are you talking about Who are you .wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 33
@@ -59,6 +60,10 @@ script = ExtResource( 5 )
 [node name="jack_gun_front_2_col" type="CollisionShape2D" parent="jack_gun_front_2_area2d"]
 position = Vector2( 250.5, 100 )
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="mouse_entered" from="jack_gun_front_2_area2d" to="." method="_on_jack_gun_front_2_area2d_mouse_entered"]
 [connection signal="mouse_exited" from="jack_gun_front_2_area2d" to="." method="_on_jack_gun_front_2_area2d_mouse_exited"]

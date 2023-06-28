@@ -1,0 +1,194 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://bookshelf_inside_fase_2.gd" type="Script" id=1]
+[ext_resource path="res://Backgrounds/bookshelf.jpg" type="Texture" id=2]
+[ext_resource path="res://livros_scenes/rap_book.tscn" type="PackedScene" id=3]
+[ext_resource path="res://livros_scenes/brds_book.tscn" type="PackedScene" id=11]
+[ext_resource path="res://livros_scenes/dance_book.tscn" type="PackedScene" id=12]
+[ext_resource path="res://livros_scenes/mpb_book.tscn" type="PackedScene" id=13]
+[ext_resource path="res://livros_scenes/rock_book.tscn" type="PackedScene" id=14]
+[ext_resource path="res://livros_scenes/funk_book.tscn" type="PackedScene" id=15]
+[ext_resource path="res://livros_scenes/salsa_book.tscn" type="PackedScene" id=16]
+[ext_resource path="res://livros_scenes/jazz_book.tscn" type="PackedScene" id=17]
+[ext_resource path="res://livros_scenes/pop_book.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52.5, 60.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 65.5, 21 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 93.25, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 18.5, 45 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 65.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 87, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 15.5, 45 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 88, 17 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 47.5, 43 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 38.5, 38.5 )
+
+[node name="bookshelf_inside_fase_2" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -1.0 ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 511, 300 )
+scale = Vector2( 0.641875, 0.460547 )
+texture = ExtResource( 2 )
+
+[node name="exit_arrow_bookshelf" type="Area2D" parent="."]
+
+[node name="exit_arrow_col_box" type="CollisionShape2D" parent="exit_arrow_bookshelf"]
+position = Vector2( 71.5, 520.5 )
+shape = SubResource( 1 )
+
+[node name="books" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="salsa_book" parent="books" instance=ExtResource( 16 )]
+margin_left = 3508.0
+margin_top = 742.0
+margin_right = 3548.0
+margin_bottom = 782.0
+
+[node name="rock_book" parent="books" instance=ExtResource( 14 )]
+margin_left = 3498.0
+margin_top = 16.0
+margin_right = 3538.0
+margin_bottom = 56.0
+
+[node name="funk_book" parent="books" instance=ExtResource( 15 )]
+margin_left = -13.0
+margin_top = 1416.0
+margin_right = 27.0
+margin_bottom = 1456.0
+
+[node name="jazz_book" parent="books" instance=ExtResource( 17 )]
+margin_left = 2312.0
+margin_top = 727.0
+margin_right = 2352.0
+margin_bottom = 767.0
+
+[node name="pop_book" parent="books" instance=ExtResource( 18 )]
+margin_left = 2296.0
+margin_top = 11.0
+margin_right = 2336.0
+margin_bottom = 51.0
+
+[node name="dance_book" parent="books" instance=ExtResource( 12 )]
+margin_left = 1148.0
+margin_top = 705.0
+margin_right = 1188.0
+margin_bottom = 745.0
+
+[node name="mpb_book" parent="books" instance=ExtResource( 13 )]
+margin_left = 5.0
+margin_top = 689.0
+margin_right = 45.0
+margin_bottom = 729.0
+
+[node name="brds_book" parent="books" instance=ExtResource( 11 )]
+margin_left = 1137.0
+margin_right = 1177.0
+
+[node name="rap_book" parent="books" instance=ExtResource( 3 )]
+margin_left = 1148.0
+margin_top = 1415.0
+margin_right = 1188.0
+margin_bottom = 1455.0
+
+[node name="rock_on_book" type="Area2D" parent="."]
+
+[node name="rock_on_col" type="CollisionShape2D" parent="rock_on_book"]
+position = Vector2( 107.5, 56 )
+shape = SubResource( 2 )
+
+[node name="jazz_on_book" type="Area2D" parent="."]
+
+[node name="jazz_on_col" type="CollisionShape2D" parent="jazz_on_book"]
+position = Vector2( 649.25, 206 )
+shape = SubResource( 3 )
+
+[node name="funk_on_book" type="Area2D" parent="."]
+
+[node name="funk_on_col" type="CollisionShape2D" parent="funk_on_book"]
+position = Vector2( 285.5, 400 )
+shape = SubResource( 4 )
+
+[node name="salsa_on_book" type="Area2D" parent="."]
+
+[node name="salsa_on_col" type="CollisionShape2D" parent="salsa_on_book"]
+position = Vector2( 313.5, 512.5 )
+shape = SubResource( 5 )
+
+[node name="pop_on_book" type="Area2D" parent="."]
+
+[node name="pop_on_col" type="CollisionShape2D" parent="pop_on_book"]
+position = Vector2( 838, 208.5 )
+shape = SubResource( 6 )
+
+[node name="dance_on_book" type="Area2D" parent="."]
+
+[node name="dance_on_col" type="CollisionShape2D" parent="dance_on_book"]
+position = Vector2( 528.5, 400 )
+shape = SubResource( 7 )
+
+[node name="mpb_on_book" type="Area2D" parent="."]
+
+[node name="mpb_on_col" type="CollisionShape2D" parent="mpb_on_book"]
+position = Vector2( 853, 174 )
+shape = SubResource( 8 )
+
+[node name="brds_on_book" type="Area2D" parent="."]
+
+[node name="brds_on_col" type="CollisionShape2D" parent="brds_on_book"]
+position = Vector2( 845.5, 403 )
+shape = SubResource( 9 )
+
+[node name="rap_on_book" type="Area2D" parent="."]
+
+[node name="rap_on_col" type="CollisionShape2D" parent="rap_on_book"]
+position = Vector2( 169.5, 180.5 )
+shape = SubResource( 10 )
+
+[connection signal="mouse_entered" from="exit_arrow_bookshelf" to="." method="_on_exit_arrow_bookshelf_mouse_entered"]
+[connection signal="mouse_exited" from="exit_arrow_bookshelf" to="." method="_on_exit_arrow_bookshelf_mouse_exited"]
+[connection signal="mouse_entered" from="rock_on_book" to="." method="_on_rock_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="rock_on_book" to="." method="_on_rock_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="jazz_on_book" to="." method="_on_jazz_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="jazz_on_book" to="." method="_on_jazz_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="funk_on_book" to="." method="_on_funk_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="funk_on_book" to="." method="_on_funk_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="salsa_on_book" to="." method="_on_salsa_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="salsa_on_book" to="." method="_on_salsa_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="pop_on_book" to="." method="_on_pop_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="pop_on_book" to="." method="_on_pop_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="dance_on_book" to="." method="_on_dance_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="dance_on_book" to="." method="_on_dance_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="mpb_on_book" to="." method="_on_mpb_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="mpb_on_book" to="." method="_on_mpb_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="brds_on_book" to="." method="_on_brds_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="brds_on_book" to="." method="_on_brds_on_book_mouse_exited"]
+[connection signal="mouse_entered" from="rap_on_book" to="." method="_on_rap_on_book_mouse_entered"]
+[connection signal="mouse_exited" from="rap_on_book" to="." method="_on_rap_on_book_mouse_exited"]

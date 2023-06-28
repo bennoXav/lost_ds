@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _process(delta:float) -> void:
 	if Input.is_action_pressed("click") and inside:
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		get_tree().change_scene("res://telas/tela_03.tscn")
 
 
@@ -21,8 +22,10 @@ func _process(delta:float) -> void:
 
 
 func _on_Area2D_mouse_entered() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	inside = true
 
 
 func _on_Area2D_mouse_exited() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	inside = false

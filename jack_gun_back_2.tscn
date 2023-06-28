@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://jack_gun_back_2.gd" type="Script" id=1]
 [ext_resource path="res://Backgrounds/jack_gun_back_2.jpg" type="Texture" id=2]
 [ext_resource path="res://Backgrounds/dialog_box.png" type="Texture" id=3]
 [ext_resource path="res://fonts/ARLRDBD.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://voices/unknown_voice/Its somewhere in the next room Go find it and type it on the computer.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -54,6 +55,10 @@ position = Vector2( 2, 422 )
 [node name="jack_gun_back_2_shape" type="CollisionShape2D" parent="jack_back_2_area_2d"]
 position = Vector2( 763.125, 48 )
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="mouse_entered" from="jack_back_2_area_2d" to="." method="_on_jack_gun_back_2_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="jack_back_2_area_2d" to="." method="_on_jack_gun_back_2_area_2d_mouse_exited"]

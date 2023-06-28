@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://livros/livro_dance.png" type="Texture" id=1]
+[ext_resource path="res://livros_scenes/dance_book.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41.5, 47 )
+
+[node name="dance_book" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 509, 301 )
+scale = Vector2( 1.02204, 0.823529 )
+texture = ExtResource( 1 )
+
+[node name="dance_arrow" type="Area2D" parent="."]
+
+[node name="dance_arrow_col" type="CollisionShape2D" parent="dance_arrow"]
+position = Vector2( 969.5, 547 )
+shape = SubResource( 1 )
+
+[connection signal="mouse_entered" from="dance_arrow" to="." method="_on_dance_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="dance_arrow" to="." method="_on_dance_arrow_mouse_exited"]

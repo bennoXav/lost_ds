@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(delta:float) -> void:
 		if inside_back and  Input.is_action_pressed("click"):
 			get_tree().change_scene("res://jack_gun_front_2.tscn")
-		return
+		
 
 func _on_jack_gun_back_area2d_mouse_entered() -> void:
 	inside_back = true
