@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://pc_inside_fase_2.gd" type="Script" id=1]
 [ext_resource path="res://Backgrounds/image.png" type="Texture" id=2]
+[ext_resource path="res://Backgrounds/button_ok_normal.png" type="Texture" id=3]
+[ext_resource path="res://Backgrounds/button_ok_pressed.png" type="Texture" id=4]
+[ext_resource path="res://Backgrounds/dialog_box.png" type="Texture" id=5]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37, 41.5 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="pc_inside_fase_2" type="Control"]
 margin_right = 11.0
@@ -22,5 +32,44 @@ texture = ExtResource( 2 )
 position = Vector2( 70, 533.5 )
 shape = SubResource( 1 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = 307.0
+margin_top = 409.0
+margin_right = 925.0
+margin_bottom = 554.0
+color = Color( 0.0313726, 0.0235294, 0.101961, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_left = 309.0
+margin_top = 409.0
+margin_right = 921.0
+margin_bottom = 560.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TextureRect"]
+margin_left = 42.0
+margin_top = -52.0
+margin_right = 170.0
+margin_bottom = 21.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+expand = true
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+margin_left = 351.0
+margin_top = 437.0
+margin_right = 857.0
+margin_bottom = 528.0
+custom_fonts/font = ExtResource( 6 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+max_length = 20
+clear_button_enabled = true
+
 [connection signal="mouse_entered" from="exit_pc_area2d" to="." method="_on_exit_pc_area2d_mouse_entered"]
 [connection signal="mouse_exited" from="exit_pc_area2d" to="." method="_on_exit_pc_area2d_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://end_game.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://telas.gd" type="Script" id=15]
 [ext_resource path="res://music.tscn" type="PackedScene" id=16]
 [ext_resource path="res://jack_whats_music.tscn" type="PackedScene" id=17]
+[ext_resource path="res://win_game.tscn" type="PackedScene" id=18]
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -37,6 +38,8 @@ margin_left = 27.0
 margin_top = 767.0
 margin_right = 67.0
 margin_bottom = 807.0
+
+[node name="win_game" parent="Main" instance=ExtResource( 18 )]
 
 [node name="tela_01" parent="." instance=ExtResource( 4 )]
 margin_left = -1163.0

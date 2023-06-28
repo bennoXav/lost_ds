@@ -13,6 +13,8 @@ func _ready() -> void:
 func play_music():
 	$bc_music.stream = bc_music_load
 	$bc_music.play()
+func stop_music():
+	$bc_music.stop()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
